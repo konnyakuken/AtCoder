@@ -1,0 +1,5 @@
+S=list(input())
+tmp=S.pop(0)
+S.append(tmp)
+print(S)
+print("".join(S))
