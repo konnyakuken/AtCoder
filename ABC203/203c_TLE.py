@@ -2,46 +2,45 @@ N,K = map(int,input().split())
 friends = []
 distance = 0 
 
-
-
 for i in range(N):
     A,B = map(int,input().split())
     friends.append([A,B])
 
-friends = sorted(friends, reverse=False, key=lambda x: x[0])  #[0]に注目してソート
+friends = sorted(friends, reverse=False, key=lambda x: x[0])
 
-flag = False
+flag = 0
+
+count = len(friends)
 
 while True:
     number = 0
     sum = 0
     while True:
-
-        if(len(friends) == 1):
+        if(count == 1):
             number = friends[0][0]
             sum += friends[0][1]
-            flag = True
+            flag = 1
             break
         
         if(friends[0][0] == friends[1][0] ):
             number = friends[0][0]
-            sum += int(friends.pop(0)[1])
+            sum += friends.pop(0)[1]
+            count -= 1
         else:
             number = friends[0][0]
-            sum += int(friends.pop(0)[1])
+            sum += friends.pop(0)[1]
+            count -= 1
             break
 
     if(number <= K):
         K += sum
 
-        if(flag == True):
+        if(flag == 1):
             distance = K
             break
     else:
         distance = K
         break
-
-
 
 print(distance)
     
