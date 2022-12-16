@@ -2,7 +2,7 @@ N,K = map(int,input().split())
 A = list(map(int, input().split()))
 all = 0
 
-A_reversed = sorted(A)
+A_sort = sorted(A)
 
 all= K // N 
 K = K % N
@@ -13,18 +13,18 @@ if(K == 0):
         print(all)
     exit()
 
-border = A_reversed[0]
+border = A_sort[0]
 count = 0
 
 #判定
-for i in A_reversed:
+for i in A_sort:
     if (K == 0):
         break
     else:
         K -= 1
         count += 1
 
-border = A_reversed[count -1]
+border = A_sort[count -1]
 
 #出力
 for i in A:
