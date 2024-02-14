@@ -1,0 +1,29 @@
+import bisect
+
+X = list(input())
+X_dict = dict()
+for i in range(len(X)):
+    X_dict[X[i]] = i
+N = int(input())
+S = list()
+max_len: int = 0
+for i in range(N):
+    name = input()
+    S.append(name)
+    if(max_len < len(name)):
+        max_len = len(name)
+
+
+for i in range(max_len):
+    for j in range(N):
+        s = list()
+        if(len(s)==0):
+            s.append(S[j])
+        else:
+            name = S[j]
+            if(X_dict[name[i]])
+
+print(len(s))
+
+
+
